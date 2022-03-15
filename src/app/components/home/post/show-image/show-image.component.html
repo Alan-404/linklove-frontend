@@ -1,0 +1,8 @@
+<div class="text-center">
+    <img [src]="imageShow.media_link" style="width: 37rem; height: 25rem; border-radius: 25px;"/>
+    <div class="d-flex" style="margin: auto auto; width: 100%;">
+        <div *ngFor="let item of arrNum;" class="mx-2">
+            <button (click)="changeImage(item)" value="{{item}}" [ngClass]="{'btnChoosen':index==item}" class="btnChange"></button>
+        </div>
+    </div>
+</div>

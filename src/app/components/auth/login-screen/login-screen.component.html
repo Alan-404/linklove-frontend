@@ -1,0 +1,35 @@
+<div class="myBackground">
+    <div style="margin-top: 15vh;" class="d-flex justify-content-evenly">
+        <div>
+            <div class="d-flex">
+                <img style="width: 150px; height: 150px;" src="../../../../assets/images/logo.png"/>
+                <p style="font-size: 80px;" class="mt-5"><span style="color: rgb(238, 238, 89)">Link</span><span style="color: pink;">love</span></p>
+            </div>
+            <div style="font-size: 25px; margin-left: 8rem; font-family: helvetica; color: gray" >
+                <p class="my-4">Link the heart to the love</p>
+                <p>Link the love to the world</p>
+            </div>
+        </div>
+        <div class="myForm p-3 text-center">
+            <i class="fa fa-user border p-4 text-light mb-3" style="font-size: 70px; border-radius: 50%;"></i>
+            <div class="input-group mb-3">
+                <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                <input #inputEmail type="email" class="form-control" placeholder="Enter email...">
+            </div>
+    
+            <div class="input-group mb-4">
+                <span class="input-group-text"><i class="fa fa-key"></i></span>
+                <input (keyup.enter)="submitLoginAccount()" #inputPassword type="password" class="form-control" placeholder="Enter password...">
+            </div>
+            <div class="mb-5 d-flex justify-content-between text-light">
+                <span>Don't have account? Register <a routerLink="/register">here</a></span>
+                <span>Forgot your password? Click <a routerLink="register">here</a></span>
+            </div>
+            <button (click)="submitLoginAccount()" type="button" class="btn btn-primary">Login Account</button>
+        </div>
+    </div>
+</div>
+
+<ng-template [ngIf]="showSpinner">
+    <app-spinner></app-spinner>
+</ng-template>

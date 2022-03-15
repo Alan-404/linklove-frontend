@@ -1,0 +1,25 @@
+.addPostInput{
+    background-color: rgb(240, 191, 191);
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.addPostInput:hover{
+    background-color: darksalmon;
+}
+
+::placeholder{
+    color: white;
+}
+
+.optionAdd{
+    background-color: azure;
+    border-radius: 15px;
+}
+.notificationFriend{
+    background-color: red;
+    border-radius: 50%;
+    
+}

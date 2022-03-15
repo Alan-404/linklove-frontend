@@ -1,0 +1,53 @@
+$first_color: #dfec68;
+$second_color: #d53acd;
+
+.myHeader{
+    position:fixed;
+    width: 100vw;
+    background-color: rgb(247, 243, 243);
+    box-shadow: 2px 4px 4px #888888;
+    border: 5px solid transparent;
+    -moz-border-image: -moz-linear-gradient(top, $first_color 0%, $second_color 100%);
+	-webkit-border-image: -webkit-linear-gradient(top, $first_color 0%, $second_color 100%);
+	border-image: linear-gradient(to bottom, $first_color 0%, $second_color 100%);
+    border-image-slice: 1;
+    z-index: 6;
+}
+
+.mySearch{
+    background-color: rgb(245, 233, 212);
+    border: none;
+    outline: none;
+    border-radius: 25px;
+}
+
+.myInfo:hover{
+    background-color: rgb(190, 190, 134);
+}
+
+.fa-arrow-down{
+    background-image: linear-gradient(45deg, pink, yellow);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.fa-arrow-down:hover{
+    background-image: linear-gradient(45deg, rgb(175, 119, 128), rgb(161, 161, 9));
+}
+
+.dark-overlay{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+
+    top: 0;
+    left: 0;
+    background-color: rgba(119, 115, 115, 0.5);
+}
+
+.authOptions {
+    position: fixed;
+    right: 0;
+    width: 15%;
+    z-index: 2;
+}

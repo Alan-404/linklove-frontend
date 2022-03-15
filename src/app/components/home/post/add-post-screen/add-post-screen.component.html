@@ -1,0 +1,30 @@
+<div class="myForm p-3" style="border-radius: 25px;">
+    <div class="d-flex justify-content-between">
+        <div></div>
+        <h1 class="text-light">Add Post</h1>
+        <div (click)="closeForm()" style="cursor: pointer;"><i class="fa fa-window-close h3 closeIcon"></i></div>
+    </div>
+    <hr />
+    <div class="mb-4">
+        <textarea #inputContent class="w-100 p-2" placeholder="Leave your content here..." style="height: 200px; background:none; font-size: 20px;border: none; outline: none"></textarea>
+    </div>
+    <div class="">
+        <div class="f-flex">
+            <div class="h3">
+                <label for="upload-photo"><i class="fa fa-picture-o text-info"></i></label>
+                <input (change)="getImage($event)" type="file" name="photo" id="upload-photo" />
+            </div>
+        </div>
+        <div class="d-flex mb-3 flex-wrap">
+            <div *ngFor="let image of media">
+                <img style="width: 100px; height: 100px;" [src]="image"/>
+            </div>
+        </div>
+        
+    </div>
+    <button (click)="submitAddPost()" type="button" class="btn btn-primary w-100">Post</button>
+</div>
+
+<div (click)="closeForm()" class="dark-overlay">
+
+</div>

@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div style="background-color: rgb(209, 204, 204);">
+    <div style="background-color: rgb(248, 210, 210); box-shadow: 5px 10px 18px #888888;">
+        <div class="container">
+            <div class="d-flex mt-2">
+                <img class="myImage" [src]="user.avatar"/>
+                &#160;&#160;&#160;
+                <div>
+                    <h1 class="mt-5" style="font-size: 35px;">{{user.first_name + " " + user.last_name}}</h1>
+                </div>
+            </div>
+            <hr />
+            <div class="d-flex" style="font-size: 18px; font-weight: bold;">
+                <button (click)="changeOption($event)" [ngClass]="{'showOption':currentChoose==1}" class="p-2 px-3 myBtn" value="1">Posts</button>
+                
+                <button (click)="changeOption($event)" [ngClass]="{'showOption':currentChoose==2}" class="p-2 px-3 myBtn" value="2">About</button>
+            </div>
+        </div>
+        
+    </div>
+    <div class="container d-flex">
+        <div style="width: 45%;"></div>
+        <div style="width: 55%;">
+            <app-show-post [showPosts]="showPosts"></app-show-post>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div *ngFor="let post of showPosts.posts; let index = index"  class="mt-2">
+    <div class="myPost p-3">
+        <div class="d-flex">
+            <img [src]="showPosts.users[index].avatar" style="width: 50px; height: 50px; border-radius: 50%;"/>
+            <div class="px-2">
+                <h2 class="mb-0">{{showPosts.users[index].first_name + " " + showPosts.users[index].last_name}}</h2>
+                <span class="mt-1 d-flex" style="color: gray;">{{convertDate(post.created_at)}}</span>
+            </div>
+            
+        </div>
+        <div class="d-flex mt-2">
+            <pre class="myContent">{{post.content}}</pre>
+        </div>
+        <div class="mt-2 d-flex flex-wrap">
+            <app-show-image [allImages]="showPosts.media[index]"></app-show-image>
+
+        </div>
+        <hr />
+        <div class="d-flex">
+            <button class="w-50 p-1 py-2 mediaBtn h5" >
+                <i class="fa fa-heart text-secondary"></i>
+                &#160;&#160;
+                <span>Love</span>
+            </button>
+            &#160;&#160;
+            <button class=" w-50 p-1 py-2 mediaBtn h5" >
+                <i class="fa fa-comments text-primary"></i>
+                &#160;&#160;
+                <span>Comment</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<div style="background-color: rgb(209, 204, 204);">
+    <app-header (sendUser)="getUser($event)"></app-header>
+    
+
+    <div class="d-flex justify-content-between mt-1">
+        <div style="position:fixed; width: 30%;">
+            <div class="list-group">
+                <button type="button" class="list-group-item list-group-item-action d-flex">
+                    <img [src]="user.avatar" style="width: 35px; height: 35px; border-radius: 50%;"/>
+                    <h3 class="mx-2 mt-1" style="font-weight: bold;">{{user.first_name + " " + user.last_name}}</h3>
+                </button>
+                <button (click)="goFriendPage()" type="button" class="list-group-item list-group-item-action d-flex justify-content-between">
+                    <div class="d-flex">
+                        <i class="fa fa-users h2 text-info"></i>
+                        <h3 class="mx-2 mt-1" style="font-weight: bold;">Friends</h3>
+                    </div>
+                    <div>
+                        <span class="notificationFriend p-2 text-light">{{allRequests.requests.length}}</span>
+                    </div>
+                </button>
+                <button type="button" class="list-group-item list-group-item-action d-flex">
+                    <i class="fa fa-comment-dollar h2 text-info"></i>
+                    <h3 class="mx-2 mt-1" style="font-weight: bold;">Market</h3>
+                </button>
+            </div>
+        </div>
+        <div style="width: 30%;">
+
+        </div>
+        <div style="width: 40%;" class="px-2">
+            <div class="optionAdd p-3 text-center">
+                <div class="d-flex">
+                    <img style="width: 50px; height: 50px; border-radius: 50%;" [src]="user.avatar"/>
+                    &#160;&#160;&#160;
+                    <h2 class="mt-2">{{user.first_name + " " + user.last_name}}</h2>
+                </div>
+                
+                <hr />
+                <input (click)="openAddPostForm()" class="addPostInput p-3 w-100 h4" readonly type="text" placeholder="What do you mind, {{user.last_name}}?"/>
+            </div>
+
+            <app-show-post [showPosts]="showPosts"></app-show-post>
+            
+        </div>
+
+
+        <div style="width: 30%;">
+            
+        </div>
+    </div>
+
+    
+    
+    
+</div>
+
+<ng-template [ngIf]="showAddPostForm">
+    <app-add-post-screen (closeAddPostForm)="closeAddForm()"></app-add-post-screen>
+</ng-template>
+
+<ng-template [ngIf]="showSpinner">
+    <app-spinner></app-spinner>
+</ng-template>
+
+
+
+
